@@ -10,11 +10,13 @@ interface BoxInterface {
   model: string;
   brand: string;
   topSpeed: string;
+  ref?: any;
+  innerRef?: any;
 }
 
 const Box = (props: BoxInterface) => {
   return (
-    <BoxWrapper>
+    <BoxWrapper {...props} ref={props.innerRef}>
       <ImageWrapper>
         <img src={props.imageUrl} alt={props.model} />
       </ImageWrapper>
