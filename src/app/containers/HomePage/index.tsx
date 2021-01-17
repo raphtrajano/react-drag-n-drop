@@ -15,12 +15,34 @@ export function HomePage() {
       }}
     >
       <h1 style={{ width: '100%' }}>Hey, choose a place to go</h1>
-      <button style={{ marginRight: '20px' }}>
-        <Link to="/react-beautiful-dnd">Go to React Beautiful DnD</Link>
-      </button>
-      <button>
-        <Link to="/react-grid-layout">Go to React Grid Layout</Link>
-      </button>
+      <Link to="/react-beautiful-dnd">
+        <button
+          style={{
+            color: 'white',
+            borderRadius: '10px',
+            height: '30px',
+            backgroundColor: 'darkgoldenrod',
+            marginRight: '20px',
+            outline: 'none',
+          }}
+        >
+          {' '}
+          Go to React Beautiful DnD
+        </button>
+      </Link>
+      <Link to="/react-grid-layout">
+        <button
+          style={{
+            color: 'white',
+            borderRadius: '10px',
+            height: '30px',
+            backgroundColor: 'darkgoldenrod',
+            outline: 'none',
+          }}
+        >
+          Go to React Grid Layout
+        </button>
+      </Link>
     </div>
   );
 }

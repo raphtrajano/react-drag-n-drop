@@ -6,7 +6,7 @@ const MainWrapper = styled.div`
   width: 1200px;
   height: auto;
   justify-content: center;
-  margin: 15px auto auto auto;
+  margin: 15px auto;
   box-shadow: 10px 10px 5px grey;
   border: 1px solid #000000;
   text-align: center;
@@ -19,9 +19,8 @@ const MainWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 2px;
-    justify-content: flex-start;
-    margin-left: 8.5px;
+    padding: 5px 250px;
+    justify-content: center;
   }
 `;
 
