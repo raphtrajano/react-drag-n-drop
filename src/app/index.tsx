@@ -12,7 +12,9 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
-import { HomePage } from './containers/HomePage/Loadable';
+import { HomePage } from './containers/HomePage';
+import { ReactBDnD } from './containers/ReactBDnD/Loadable';
+import { GridLayout } from './containers/ReactGridLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 
@@ -30,6 +32,8 @@ export function App() {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/react-beautiful-dnd" component={ReactBDnD} />
+        <Route exact path="/react-grid-layout" component={GridLayout} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
