@@ -21,6 +21,22 @@ const ReactGridLayoutWrapper = styled.div`
     justify-content: flex-start;
     margin-left: 8.5px;
   }
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: aqua;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid black;
+    outline: none;
+  }
+  .layout {
+    margin-top: 10px;
+    border-top: 5px solid black;
+  }
 `;
 
 export { ReactGridLayoutWrapper };
