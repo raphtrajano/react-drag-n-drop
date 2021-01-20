@@ -10,7 +10,7 @@ const NavbarWrapper = styled.section`
 `;
 
 const NavLink = styled.div`
-  width: 16%;
+  width: 190px;
   height: 30px;
   font-weight: bold;
   font-size: 16px;
@@ -19,7 +19,7 @@ const NavLink = styled.div`
   background-color: aqua;
   border: 1px solid black;
   border-top: 0px;
-  margin: 0 10px;
+  margin: 0 20px;
   transition: all 0.5s ease-in-out;
   a {
     text-decoration: none;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import Box from 'app/components/Box';
@@ -77,9 +76,6 @@ export function ReactBDnD() {
       </Helmet>
       <Text className="title" content="Famous Cars List" />
       <Text className="title" content="React Beautiful DnD" />
-      <Link to="/react-grid-layout">
-        <button>React Grid Layout</button>
-      </Link>
 
       <DragDropContext onDragEnd={handleUpdateList}>
         <Droppable droppableId="list-area">

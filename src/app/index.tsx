@@ -12,6 +12,8 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
+import Navbar from 'app/components/Navbar';
+
 import { HomePage } from './containers/HomePage';
 import { ReactBDnD } from './containers/ReactBDnD/Loadable';
 import { GridLayout } from './containers/ReactGridLayout';
@@ -29,7 +31,7 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-
+      <Navbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/react-beautiful-dnd" component={ReactBDnD} />
