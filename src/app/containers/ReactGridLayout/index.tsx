@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import RGL, { WidthProvider } from 'react-grid-layout';
 import '../../../../node_modules/react-grid-layout/css/styles.css';
 import '../../../../node_modules/react-resizable/css/styles.css';
 
+import LayoutBox from 'app/components/LayoutBox';
 import Text from 'app/components/Text';
 
+import Ludum from './assets/ludum_logo_blue.png';
 import { ReactGridLayoutWrapper } from './style';
 
 const ReactGridLayout = WidthProvider(RGL);
@@ -49,8 +50,6 @@ export function GridLayout() {
       minW: 1,
       maxW: 4,
       static: false,
-      imgURL:
-        'https://cdn140.picsart.com/328775072005201.jpg?type=webp&to=crop&r=256',
     },
     {
       i: '4',
@@ -63,8 +62,6 @@ export function GridLayout() {
       minW: 1,
       maxW: 4,
       static: false,
-      imgURL:
-        'https://cdn140.picsart.com/328775072005201.jpg?type=webp&to=crop&r=256',
     },
   ];
 
@@ -86,13 +83,10 @@ export function GridLayout() {
         minW: 1,
         maxW: 4,
         static: false,
-        imgURL:
-          'https://cdn140.picsart.com/328775072005201.jpg?type=webp&to=crop&r=256',
       },
     ];
     setCont(nextValue);
     setLayout(layout.concat(arr));
-    console.log(layout);
   };
 
   const onRemoveItem = box => {
@@ -121,9 +115,6 @@ export function GridLayout() {
         <title>Drag n Drop</title>
       </Helmet>
       <Text className="title" content="React Grid Layout" />
-      <Link to="/react-beautiful-dnd">
-        <button className="btn">React Beautiful Dnd</button>
-      </Link>
       <button className="btn" onClick={onAddItem}>
         Add Item
       </button>
@@ -139,49 +130,13 @@ export function GridLayout() {
         isBounded={true}
         onBreakPointChange={onBreakPointChange}
       >
-        {layout.map((box, index) => (
+        {layout.map(box => (
           <div
             className="dragHandle"
-            style={{ backgroundColor: 'gray', border: '2px solid' }}
+            style={{ backgroundColor: 'gray' }}
             key={box.i}
-            //data-grid={box}
           >
-            {box.imgURL ? (
-              <>
-                <h1>Box {box.i}</h1>
-                <span
-                  onClick={() => onRemoveItem(box)}
-                  style={{
-                    position: 'absolute',
-                    right: '2px',
-                    top: '0',
-                    cursor: 'pointer',
-                  }}
-                >
-                  X
-                </span>
-              </>
-            ) : (
-              <>
-                {console.log(box)}
-                <span
-                  onClick={() => onRemoveItem(box)}
-                  style={{
-                    position: 'absolute',
-                    right: '2px',
-                    top: '0',
-                    cursor: 'pointer',
-                  }}
-                >
-                  X
-                </span>
-                <img
-                  style={{ width: 'inherit', height: 'inherit' }}
-                  src={box.imgURL}
-                  alt="lamborghini car"
-                />
-              </>
-            )}
+            <LayoutBox removeItem={onRemoveItem} data={box} />
           </div>
         ))}
       </ReactGridLayout>
