@@ -33,7 +33,7 @@ export function App() {
       </Helmet>
       <Navbar />
       <Switch>
-        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/react-drag-n-drop/" component={HomePage} />
         <Route exact path="/react-beautiful-dnd" component={ReactBDnD} />
         <Route exact path="/react-grid-layout" component={GridLayout} />
         <Route component={NotFoundPage} />
