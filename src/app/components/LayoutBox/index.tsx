@@ -1,6 +1,30 @@
 import React from 'react';
 
-const LayoutBox = props => {
+interface Obj {
+  i: string;
+  h: number;
+  minW: number;
+  maxW: number;
+  minH: number;
+  maxH: number;
+  w: number;
+  x: number;
+  y: number;
+  isBounded?: boolean;
+  isDraggable?: boolean;
+  isResizable?: boolean;
+  moved?: boolean;
+  resizeHandles?: () => void;
+  static?: boolean;
+}
+
+interface Props {
+  data: Obj;
+  url: string;
+  removeItem: (data) => void;
+}
+
+const LayoutBox = (props: Props) => {
   console.log(props);
   return (
     <>
