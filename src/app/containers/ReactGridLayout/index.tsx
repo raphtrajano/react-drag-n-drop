@@ -17,7 +17,6 @@ import {
 } from './style';
 
 const ReactGridLayout = WidthProvider(RGL);
-//const ReactGridLayout = RGL;
 
 export function GridLayout() {
   const layoutD = [
@@ -45,30 +44,6 @@ export function GridLayout() {
       maxW: 4,
       static: true,
     },
-    {
-      i: '3',
-      x: 0,
-      y: 4,
-      w: 1,
-      h: 2,
-      minH: 1,
-      maxH: 4,
-      minW: 1,
-      maxW: 4,
-      static: false,
-    },
-    {
-      i: '4',
-      x: 0,
-      y: 6,
-      w: 1,
-      h: 2,
-      minH: 1,
-      maxH: 4,
-      minW: 1,
-      maxW: 4,
-      static: false,
-    },
   ];
 
   const [totalCols, setTotalCols] = useState(8);
@@ -77,17 +52,10 @@ export function GridLayout() {
   let [cont, setCont] = useState(totalCols);
   let [value, setValue] = useState(layout.length + 1);
   const [compactType, setCompactType] = useState('vertical');
-  let urlMap = new Map();
-  urlMap.set('1', null);
-  urlMap.set('2', null);
-  urlMap.set('3', null);
-  urlMap.set('4', null);
-  const [map, setMap] = useState(urlMap);
-  //let urlMap = { '1': null, '2': null, '3': null, '4': null };
+  const [map, setMap] = useState(new Map());
 
-  const onAddItem = () => {
+  const onAddItem = el => {
     const id = value.toString();
-
     const arr = [
       {
         i: id,
@@ -102,31 +70,10 @@ export function GridLayout() {
         static: false,
       },
     ];
-
-    setCont(cont + 1);
-    setValue(value + 1);
-    setLayout(layout.concat(arr));
-  };
-
-  const onAddImage = () => {
-    const id = value.toString();
-
-    const arr = [
-      {
-        i: id,
-        x: cont % totalCols,
-        y: Infinity,
-        w: 1,
-        h: 2,
-        minH: 1,
-        maxH: 4,
-        minW: 1,
-        maxW: 4,
-        static: false,
-      },
-    ];
-    map.set(id, Ludum);
-    setMap(map.set(id, Ludum));
+    if (el.textContent === 'Add Image') {
+      map.set(id, Ludum);
+      setMap(map.set(id, Ludum));
+    }
 
     setCont(cont + 1);
     setValue(value + 1);
@@ -140,17 +87,14 @@ export function GridLayout() {
     setLayout(arr);
   };
 
-  const onLayoutChange = layout => {
-    setLayout(layout);
-  };
-
-  const onResize = resizedBox => {
-    setLayout(resizedBox);
-  };
-
-  const onBreakPointChange = (breakpoint, cols) => {
-    console.log(breakpoint);
-    console.log(cols);
+  const onCompactType = () => {
+    const newCompactType =
+      compactType === 'horizontal'
+        ? 'vertical'
+        : compactType === 'vertical'
+        ? 'null'
+        : 'horizontal';
+    setCompactType(newCompactType);
   };
 
   const onAddCols = () => {
@@ -178,19 +122,23 @@ export function GridLayout() {
     }
   };
 
-  const onCompactType = () => {
-    const newCompactType =
-      compactType === 'horizontal'
-        ? 'vertical'
-        : compactType === 'vertical'
-        ? 'null'
-        : 'horizontal';
-    setCompactType(newCompactType);
-  };
-
   const onRemoveAllBoxes = () => {
     setLayout([]);
     setCont(totalCols);
+    setValue(1);
+  };
+
+  const onBreakPointChange = (breakpoint, cols) => {
+    console.log(breakpoint);
+    console.log(cols);
+  };
+
+  const onLayoutChange = layout => {
+    setLayout(layout);
+  };
+
+  const onResize = resizedBox => {
+    setLayout(resizedBox);
   };
 
   return (
@@ -201,10 +149,18 @@ export function GridLayout() {
       <Text className="title" content="React Grid Layout" />
       <BtnArea>
         <BtnDiv>
-          <button className="btn add-box" onClick={onAddItem}>
+          <button
+            id="add-item"
+            className="btn add-box"
+            onClick={() => onAddItem(document.getElementById('add-item'))}
+          >
             Add Box
           </button>
-          <button className="btn add-box" onClick={onAddImage}>
+          <button
+            id="add-image"
+            className="btn add-box"
+            onClick={() => onAddItem(document.getElementById('add-image'))}
+          >
             Add Image
           </button>
           <P>

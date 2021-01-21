@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { NavbarWrapper, NavLink, NavText } from './style';
-import { useInjectSaga } from 'utils/redux-injectors';
 
 const Navbar = props => {
   const links = [

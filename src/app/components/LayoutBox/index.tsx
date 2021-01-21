@@ -25,7 +25,6 @@ interface Props {
 }
 
 const LayoutBox = (props: Props) => {
-  console.log(props);
   return (
     <>
       {props.url ? (
