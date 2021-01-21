@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { HomePageWrapper } from './style';
+import { HomePageWrapper, Arrow, H1 } from './style';
 
 export function HomePage() {
   return (
     <HomePageWrapper>
-      <h1 style={{ width: '100%' }}>Hey, choose a place to go</h1>
+      <Arrow>↑</Arrow>
+      <Arrow>↑</Arrow>
+      <H1>Choose one of the items above to navigate</H1>
     </HomePageWrapper>
   );
 }

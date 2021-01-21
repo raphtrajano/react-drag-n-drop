@@ -8,6 +8,11 @@ const NavbarWrapper = styled.section`
   margin: auto;
   height: auto;
   background-color: dimgrey;
+  border: 3px solid black;
+  .active {
+    box-shadow: 0 0 15px cyan;
+    background-color: aqua;
+  }
 `;
 
 const NavLink = styled.div`
@@ -15,11 +20,12 @@ const NavLink = styled.div`
   height: 30px;
   font-weight: bold;
   font-size: 16px;
-  background-color: aqua;
+  background-color: #ffffff;
   border: 1px solid black;
   border-top: 0px;
   margin: 0 20px;
   transition: all 0.5s ease-in-out;
+  border-radius: 15px;
   a {
     text-decoration: none;
   }
