@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 const MainWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 1200px;
+  width: 600px;
   height: auto;
   justify-content: center;
   margin: 15px auto;
@@ -19,8 +19,8 @@ const MainWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 5px 250px;
     justify-content: center;
+    padding: 0;
   }
 `;
 

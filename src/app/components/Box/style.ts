@@ -9,7 +9,6 @@ const BoxWrapper = styled.div`
   border: 1px solid #000000;
   border-radius: 10px;
   margin: 5px;
-  transition: all 0.2s ease-in-out;
   :hover {
     box-shadow: 0 0 15px #ece400;
   }

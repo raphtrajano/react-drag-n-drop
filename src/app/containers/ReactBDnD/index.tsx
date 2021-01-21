@@ -74,8 +74,12 @@ export function ReactBDnD() {
       <Helmet>
         <title>Drag n Drop</title>
       </Helmet>
-      <Text className="title" content="Famous Cars List" />
-      <Text className="title" content="React Beautiful DnD" />
+      <Text className="title" content="Famous Car List" />
+      <h2>Drag n Drop functionality provided by React Beautiful DnD package</h2>
+      <h2>
+        {' '}
+        Each card below can switch your position with the others in the list{' '}
+      </h2>
 
       <DragDropContext onDragEnd={handleUpdateList}>
         <Droppable droppableId="list-area">

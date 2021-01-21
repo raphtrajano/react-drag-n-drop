@@ -56,6 +56,7 @@ export function GridLayout() {
 
   const onAddItem = el => {
     const id = value.toString();
+
     const arr = [
       {
         i: id,
