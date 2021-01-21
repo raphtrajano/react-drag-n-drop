@@ -7,6 +7,7 @@ const NavbarWrapper = styled.section`
   justify-content: center;
   margin: auto;
   height: auto;
+  background-color: dimgrey;
 `;
 
 const NavLink = styled.div`
@@ -14,8 +15,6 @@ const NavLink = styled.div`
   height: 30px;
   font-weight: bold;
   font-size: 16px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
   background-color: aqua;
   border: 1px solid black;
   border-top: 0px;
