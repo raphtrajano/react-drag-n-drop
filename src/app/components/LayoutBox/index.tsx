@@ -25,6 +25,13 @@ interface Props {
 }
 
 const LayoutBox = (props: Props) => {
+  let element = (
+    <h2 style={{ display: 'contents', fontSize: '100%' }}>{props.data.i}</h2>
+  );
+
+  if (props.data.static) {
+    element = <p>I'm a static box</p>;
+  }
   return (
     <>
       {props.url ? (
@@ -34,15 +41,13 @@ const LayoutBox = (props: Props) => {
           alt="ludum logo"
         />
       ) : (
-        <h2 style={{ display: 'contents', fontSize: '100%' }}>
-          {props.data.i}
-        </h2>
+        element
       )}
       <span
         onClick={() => props.removeItem(props.data)}
         style={{
           position: 'absolute',
-          left: '2px',
+          left: '0px',
           top: '-8px',
           cursor: 'pointer',
         }}
