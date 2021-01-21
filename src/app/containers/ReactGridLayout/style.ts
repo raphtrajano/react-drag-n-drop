@@ -22,16 +22,19 @@ const ReactGridLayoutWrapper = styled.div`
     margin-left: 8.5px;
   }
   .btn {
+    width: 100px;
     display: flex;
     justify-content: center;
-    margin: auto;
-    margin-top: 20px;
+    margin: 10px auto;
     border-radius: 5px;
-    background-color: aqua;
-    font-size: 15px;
+    background-color: greenyellow;
+    font-size: 16px;
     font-weight: bold;
     border: 2px solid black;
     outline: none;
+    :active {
+      transform: scale(0.9);
+    }
   }
   .layout {
     margin-top: 10px;
@@ -39,4 +42,59 @@ const ReactGridLayoutWrapper = styled.div`
   }
 `;
 
-export { ReactGridLayoutWrapper };
+const BtnArea = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  height: auto;
+  .btn {
+    width: 200px;
+    display: flex;
+    margin: 5px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid black;
+    cursor: pointer;
+    :active {
+      transform: scale(0.9);
+    }
+  }
+  .add-box {
+    background-color: deepskyblue;
+  }
+  .compact-type {
+    background-color: aquamarine;
+  }
+  .number-cols {
+    background-color: limegreen;
+  }
+  .row-height {
+    background-color: gold;
+  }
+  .remove-boxes {
+    background-color: red;
+  }
+`;
+
+const BtnDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+const LayoutWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+`;
+
+const P = styled.p`
+  margin: 0;
+  width: 100%;
+`;
+
+export { ReactGridLayoutWrapper, BtnArea, BtnDiv, LayoutWrapper, P };

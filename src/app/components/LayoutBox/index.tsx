@@ -4,25 +4,27 @@ const LayoutBox = props => {
   console.log(props);
   return (
     <>
-      {props.data.img ? (
+      {props.url ? (
         <img
           style={{ width: 'inherit', height: 'inherit' }}
-          src={props.data.img}
+          src={props.url}
           alt="ludum logo"
         />
       ) : (
-        <h1>Box {props.data.i}</h1>
+        <h2 style={{ display: 'contents', fontSize: '100%' }}>
+          {props.data.i}
+        </h2>
       )}
       <span
         onClick={() => props.removeItem(props.data)}
         style={{
           position: 'absolute',
-          right: '2px',
-          top: '0',
+          left: '2px',
+          top: '-8px',
           cursor: 'pointer',
         }}
       >
-        X
+        ×
       </span>
     </>
   );
