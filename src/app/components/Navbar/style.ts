@@ -32,6 +32,9 @@ const NavLink = styled.div`
   :hover {
     transform: scale(1.1, 1);
   }
+  @media (max-width: 465px) {
+    margin: 5px 20px;
+  }
 `;
 
 const NavText = styled.p`

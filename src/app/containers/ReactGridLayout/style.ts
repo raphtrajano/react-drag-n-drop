@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 const ReactGridLayoutWrapper = styled.div`
   display: block;
-  width: 1200px;
+  width: 90%;
   height: auto;
   margin: 15px auto auto auto;
   box-shadow: 10px 10px 5px grey;
