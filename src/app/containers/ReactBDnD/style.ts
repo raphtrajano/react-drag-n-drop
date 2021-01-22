@@ -22,6 +22,9 @@ const MainWrapper = styled.div`
     justify-content: center;
     padding: 0;
   }
+  @media (max-width: 650px) {
+    width: 90%;
+  }
 `;
 
 export { MainWrapper };
